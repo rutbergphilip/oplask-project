@@ -9,7 +9,8 @@ new Vue({
   router,
   data(){
     return {
-      searchInput: ""
+      searchInput: "",
+      images:[]
     }
   },
   methods: {
