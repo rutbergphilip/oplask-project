@@ -4,19 +4,16 @@
     <button @click.prevent="callback">Click Me</button>
 
     <ul>
-    
       <li v-for="(image, index) in images" :key="index">
         <gallery :Image="image" />
-        
       </li>
-   
     </ul>
-</div>  
+  </div>
 </template>
 
 <script>
 import Gallery from "../components/Gallery.vue";
-import * as api from "@/api"
+import * as api from "@/api";
 export default {
   name: "Home",
   data() {
@@ -28,22 +25,21 @@ export default {
     Gallery
   },
   methods: {
-   async callback() {
+    async callback() {
       this.$root.images = [];
       this.$root.searchInput = this.searchInput;
       // this.$root.fetchData();
       const data = await api.searchFunction(this.searchInput);
       this.$root.images.push(data.results);
-      console.log(this.$root.images)
-    },
+      console.log(this.$root.images);
+    }
   },
-  computed:{
-   images(){
-     return this.$root.images[0]
-   }
-  },
+  computed: {
+    images() {
+      return this.$root.images[0];
+    }
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>

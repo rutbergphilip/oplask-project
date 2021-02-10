@@ -1,9 +1,7 @@
 <template>
-
   <div class="wrapper">
     <img class="image" :src="Image.urls.small" />
   </div>
-  
 </template>
 
 <script>
@@ -11,11 +9,10 @@ export default {
   props: {
     Image: Object
   }
-}
+};
 </script>
 
 <style>
-
 .image {
   border-radius: 10px;
   padding: 5px;
@@ -24,10 +21,10 @@ export default {
   object-fit: cover;
   cursor: pointer;
 }
-.image:hover{
+.image:hover {
   transform: scale(1.1);
 }
-ul{
+ul {
   padding-top: 4vh;
 }
 li {
