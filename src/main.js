@@ -10,7 +10,7 @@ new Vue({
   data(){
     return {
       searchInput: "",
-      images:[]
+      images: []
     }
   },
   methods: {

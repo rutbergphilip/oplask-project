@@ -2,17 +2,19 @@
   <div class="home">
     <input type="text" v-model="searchInput" /> |
     <button @click.prevent="callback">Click Me</button>
-    <gallery
-    v-bind:images="images"
-    > </gallery>
-    <cardtemplate/>
+
+    <ul>
+      <li v-for="(image, index) in images" :key="index">
+        <gallery :Image="image" />
+      </li>
+    </ul>
+
   </div>
 </template>
 
 <script>
 import Gallery from "../components/Gallery.vue";
 import * as api from "@/api"
-import Cardtemplate from '../components/Cardtemplate.vue';
 export default {
   name: "Home",
   data() {
@@ -21,8 +23,7 @@ export default {
     };
   },
   components: {
-    Gallery,
-    Cardtemplate,
+    Gallery
   },
   methods: {
    async callback() {
@@ -30,7 +31,8 @@ export default {
       this.$root.searchInput = this.searchInput;
       // this.$root.fetchData();
       const data = await api.searchFunction(this.searchInput);
-     this.$root.images.push(data.results);
+      this.$root.images.push(data.results);
+      console.log(this.$root.images)
     },
   },
   computed:{

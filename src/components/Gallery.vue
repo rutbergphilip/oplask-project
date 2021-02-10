@@ -1,38 +1,17 @@
 <template>
   <div class="wrapper">
-  <div class="gallery">
-      <ul>
-          <li v-for="(image, index) in images" :key="index"></li>         
-    </ul>
-
-
-
- 
-
-
-  </div>
+    <img class="image" :src="Image.urls.small" />
   </div>
 </template>
 
 <script>
 export default {
-  props:{
-    images:Array
+  props: {
+    Image: Object
   }
-};
+}
 </script>
 
 <style>
-.gallery{
-    margin: 100px;
 
-    width: 600px;
-    height: 600px;
-    background-color: gray;
-}
-ul{
-    list-style:none;
-    display: flex;
-    flex-wrap: wrap;
-}
 </style>
