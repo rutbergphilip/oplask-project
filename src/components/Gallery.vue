@@ -16,7 +16,6 @@ export default {
 
 <style>
 
-
 .image {
   border-radius: 10px;
   padding: 5px;
@@ -26,15 +25,13 @@ export default {
   cursor: pointer;
 }
 .image:hover{
-transform: scale(1.1);
+  transform: scale(1.1);
 }
 ul{
   padding-top: 4vh;
 }
 li {
-   
-    display: inline-block;
-    width: calc(90% / 3);
-
-  }
+  display: inline-block;
+  width: calc(90% / 3);
+}
 </style>
