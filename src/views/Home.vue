@@ -4,12 +4,14 @@
     <button @click.prevent="callback">Click Me</button>
 
     <ul>
+    
       <li v-for="(image, index) in images" :key="index">
         <gallery :Image="image" />
+        
       </li>
+   
     </ul>
-
-  </div>
+</div>  
 </template>
 
 <script>
