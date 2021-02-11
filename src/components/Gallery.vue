@@ -1,13 +1,13 @@
 <template>
   <div class="wrapper">
-    <img class="image" :src="Image.urls.small" />
+    <img class="image" :src="image.urls.small" />
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    Image: Object
+    image: Object
   }
 };
 </script>

@@ -5,7 +5,7 @@
 
     <ul>
       <li v-for="(image, index) in images" :key="index">
-        <gallery :Image="image" />
+        <gallery :image="image" />
       </li>
     </ul>
   </div>
@@ -13,7 +13,6 @@
 
 <script>
 import Gallery from "../components/Gallery.vue";
-import * as api from "@/api";
 export default {
   name: "Home",
   data() {
@@ -26,17 +25,12 @@ export default {
   },
   methods: {
     async callback() {
-      this.$root.images = [];
-      this.$root.searchInput = this.searchInput;
-      // this.$root.fetchData();
-      const data = await api.searchFunction(this.searchInput);
-      this.$root.images.push(data.results);
-      console.log(this.$root.images);
+      this.$store.dispatch('fetchData', this.searchInput)
     }
   },
   computed: {
     images() {
-      return this.$root.images[0];
+      return this.$store.state.images;
     }
   }
 };
